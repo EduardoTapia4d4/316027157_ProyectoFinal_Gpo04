@@ -108,6 +108,7 @@ int main()
     Model mesilla((char*)"Models/Mesilla/Mesa.obj");
     Model lamp((char*)"Models/Lampara/lampara.obj");
     Model Ropero((char*)"Models/Ropero/Ropero.obj");
+    Model MesaTV((char*)"Models/MesaTV/MesaTV.obj");
 
 
     glm::mat4 projection = glm::perspective(camera.GetZoom(), (float)SCREEN_WIDTH / (float)SCREEN_HEIGHT, 0.1f, 100.0f);
@@ -266,7 +267,14 @@ int main()
 
 
 
-
+        //Para la MesaTV
+        model = glm::mat4(1);
+        model = glm::scale(model, glm::vec3(0.35f, 0.35f, 0.35f));
+        model = glm::translate(model, glm::vec3(-6.0f, -1.0f, 5.0f));
+        model = glm::rotate(model, glm::radians(180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+        glUniformMatrix4fv(glGetUniformLocation(lightingShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+        glBindVertexArray(VAO);
+        MesaTV.Draw(lightingShader);
 
 
         glBindVertexArray(0);

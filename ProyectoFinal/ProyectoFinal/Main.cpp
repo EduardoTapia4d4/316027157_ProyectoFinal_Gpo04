@@ -106,7 +106,7 @@ int main()
 
     // Load models
     Model mesilla((char*)"Models/Mesilla/Mesa.obj");
-    Model lamp((char*)"Models/Lampara/lampara.obj");
+    Model lamp((char*)"Models/Lampara/LampV2.obj");
     Model Ropero((char*)"Models/Ropero/Ropero.obj");
     Model MesaTV((char*)"Models/MesaTV/MesaTV.obj");
 

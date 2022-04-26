@@ -179,7 +179,8 @@ int main()
 
 	Model MesaTV((char*)"Models/MesaTV/MEsaTV.obj");
 
-	//Model Ropero((char*)"Models/Ropero/Ropero.obj");
+	Model Ropero((char*)"Models/Ropero/RoperoV2.obj");
+	Model RoperoPuerta((char*)"Models/Ropero/RoperoV2_puerta.obj");
 
 	Model Estantes((char*)"Models/Estandarte/Estantes.obj");
 	Model LibEst((char*)"Models/Estandarte/Libros.obj");
@@ -350,6 +351,23 @@ int main()
 	
 		model = glm::mat4(1);
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+		model = glm::translate(model, glm::vec3(8.0f, -1.5f, 8.0f));		
+		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1);
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0, 1.0, 1.0, 5.0);
+		glBindVertexArray(0);
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		Ropero.Draw(lightingShader);
+		RoperoPuerta.Draw(lightingShader);
+
+			
+
+
+		model = glm::mat4(1);
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		model = glm::translate(model, glm::vec3(-5.0f, 0.0f, -1.0f));
 		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
@@ -361,6 +379,7 @@ int main()
 		Estantes.Draw(lightingShader);
 		LibEst.Draw(lightingShader);
 		Estereo.Draw(lightingShader);
+
 		
 
 

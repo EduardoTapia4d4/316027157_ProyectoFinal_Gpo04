@@ -20,11 +20,11 @@ enum Camera_Movement
 };
 
 // Default camera values
-const GLfloat YAW = -90.0f;			//Sensibilidad de camara
-const GLfloat PITCH = 0.0f;			//Sensibilidad en movimientos laterales
-const GLfloat SPEED = 6.0f;			//Rapidez de movimientos
-const GLfloat SENSITIVTY = 0.25f;	//Junto con el WAW la sensibilidad
-const GLfloat ZOOM = 45.0f;			//FOV, campo de vision
+const GLfloat YAW = -90.0f;
+const GLfloat PITCH = 0.0f;
+const GLfloat SPEED = 6.0f;
+const GLfloat SENSITIVTY = 0.25f;
+const GLfloat ZOOM = 45.0f;
 
 // An abstract camera class that processes input and calculates the corresponding Eular Angles, Vectors and Matrices for use in OpenGL
 class Camera
@@ -55,6 +55,18 @@ public:
 	{
 		return glm::lookAt(this->position, this->position + this->front, this->up);
 	}
+
+	void Recorrido(GLfloat xOffset)//Modifica la rotación recibiendo el ángulo
+	{
+		this->yaw = xOffset;
+		this->updateCameraVectors();
+	}
+
+	void MovimientoAutomatico(GLfloat velocidad) //Realiza un movimiento automatico hacia adelante
+	{
+		this->position += this->front * velocidad;
+	}
+
 
 	// Processes input received from any keyboard-like input system. Accepts input parameter in the form of camera defined ENUM (to abstract it from windowing systems)
 	void ProcessKeyboard(Camera_Movement direction, GLfloat deltaTime)
@@ -109,6 +121,7 @@ public:
 		this->updateCameraVectors();
 	}
 
+	
 	// Processes input received from a mouse scroll-wheel event. Only requires input on the vertical wheel-axis
 	void ProcessMouseScroll(GLfloat yOffset)
 	{

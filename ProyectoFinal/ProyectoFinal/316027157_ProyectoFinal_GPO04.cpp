@@ -175,16 +175,19 @@ int main()
 	Model lamp((char*)"Models/Lampara/LampV2.obj");
 	Model FocoL((char*)"Models/Lampara/FocoLamp.obj");
 
-	Model comoda((char*)"Models/Comoda/comoda.obj");
+	Model comoda((char*)"Models/Comoda/Mesa.obj");
 
 	Model MesaTV((char*)"Models/MesaTV/MEsaTV.obj");
 
-	Model Ropero((char*)"Models/Ropero/RoperoV2.obj");
-	Model RoperoPuerta((char*)"Models/Ropero/RoperoV2_puerta.obj");
+	Model Ropero((char*)"Models/Ropero/Ropero.obj");
+	Model RoperoPuerta((char*)"Models/Ropero/RoperoPuerta.obj");
 
-	Model Estantes((char*)"Models/Estandarte/Estantes.obj");
-	Model LibEst((char*)"Models/Estandarte/Libros.obj");
-	Model Estereo((char*)"Models/Estandarte/Estereo.obj");
+	Model Estante((char*)"Models/Estante/EstanteF.obj");
+	Model EstanteBandeja((char*)"Models/Estante/EstanteBamdeja.obj");
+
+	Model cama((char*)"Models/Cama/cama.obj");
+	
+
 
 
 
@@ -324,8 +327,9 @@ int main()
 
 		model = glm::mat4(1);
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		model = glm::translate(model, glm::vec3(4.0f, -3.0f, 1.0f));
+		model = glm::translate(model, glm::vec3(3.2f, -4.0f, 0.0f));
 		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.2f, 1.2f, 1.2f));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
@@ -351,8 +355,8 @@ int main()
 	
 		model = glm::mat4(1);
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
-		model = glm::translate(model, glm::vec3(8.0f, -1.5f, 8.0f));		
+		model = glm::scale(model, glm::vec3(0.7f, 0.7f, 0.7f));
+		model = glm::translate(model, glm::vec3(4.0f, -1.65f, 4.0f));		
 		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
@@ -376,11 +380,26 @@ int main()
 		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0, 1.0, 1.0, 5.0);
 		glBindVertexArray(0);
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		Estantes.Draw(lightingShader);
-		LibEst.Draw(lightingShader);
-		Estereo.Draw(lightingShader);
+		Estante.Draw(lightingShader);
+		EstanteBandeja.Draw(lightingShader);
 
 		
+		model = glm::mat4(1);
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		model = glm::scale(model, glm::vec3(2.5f, 2.5f, 2.5f));
+		model = glm::translate(model, glm::vec3(0.0f, -1.7f, -1.6f));
+		model = glm::rotate(model, glm::radians(180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0, 1.0, 1.0, 5.0);
+		glBindVertexArray(0);
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		cama.Draw(lightingShader);
+
+
+
+
 
 
 		//For the light bulb in the lamp object

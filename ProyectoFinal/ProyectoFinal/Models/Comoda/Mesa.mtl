@@ -1,10 +1,3 @@
-newmtl Libros:lambert3SG
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd Books_Diffuse.png
-Ni 1.00
 newmtl Mesa:lambert2SG
 illum 4
 Kd 0.00 0.00 0.00
@@ -12,9 +5,17 @@ Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
 map_Kd Madera.jpg
 Ni 1.00
-newmtl initialShadingGroup
+newmtl Mesa:lambert3SG
 illum 4
-Kd 0.50 0.50 0.50
+Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
+map_Kd Books_Diffuse.png
+Ni 1.00
+newmtl lambert2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd DespertadorTexturesR.png
 Ni 1.00

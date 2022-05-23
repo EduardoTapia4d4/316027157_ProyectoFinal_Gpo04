@@ -229,6 +229,7 @@ int main()
 	Shader lampShader("Shaders/lamp.vs", "Shaders/lamp.frag");
 	
 	//Carga de modelos
+	//Primer cuarto
 	Model lamp((char*)"Models/Lampara/LampV2.obj");
 	Model FocoL((char*)"Models/Lampara/FocoLamp.obj");
 
@@ -255,6 +256,13 @@ int main()
 	Model PuertaEntrada((char*)"Models/Casa/puertaEntrada.obj");
 	Model PuertaCuarto((char*)"Models/Casa/puertaCuarto.obj");
 	Model cortinas((char*)"Models/Cortinas/cortinas.obj");
+
+	//Segundo cuarto
+	Model MueblesC((char*)"Models/MueblesCocina/MueblesV1.obj");
+	Model LavaPlatos((char*)"Models/LavaPlatos/lavaPlatos.obj");
+	Model Estufa((char*)"Models/Estufa/estufa.obj");
+
+
 
 
 	// First, set the container's VAO (and VBO)
@@ -349,17 +357,7 @@ int main()
 		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0, 1.0, 1.0, 5.0);
 		casa.Draw(lightingShader);
 
-		//Ventanas con transparencia
-		glEnable(GL_BLEND);
-		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-		model = glm::mat4(1);
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1);
-		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0, 1.0, 1.0, 0.60);
-		ventanas.Draw(lightingShader);
-		glDisable(GL_BLEND);
-		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0, 1.0, 1.0, 1.0);
-		glBindVertexArray(0);
+
 
 		//Puerta de la entrada
 		model = glm::mat4(1);
@@ -539,6 +537,49 @@ int main()
 		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0, 1.0, 1.0, 5.0);		
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		cortinas.Draw(lightingShader);
+		glBindVertexArray(0);
+
+
+		//Muebles de la cocina		
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(2.708f, 1.34f, -8.112f));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0, 1.0, 1.0, 5.0);
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		MueblesC.Draw(lightingShader);
+		glBindVertexArray(0);
+
+
+		//Lava platos	
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(2.708f, 1.34f, -8.112f));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0, 1.0, 1.0, 5.0);
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		LavaPlatos.Draw(lightingShader);
+		glBindVertexArray(0);
+
+		//Estufa	
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(2.708f, 1.34f, -8.112f));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0, 1.0, 1.0, 5.0);
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		Estufa.Draw(lightingShader);
+		glBindVertexArray(0);
+
+
+
+		//Ventanas con transparencia
+		glEnable(GL_BLEND);
+		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+		model = glm::mat4(1);
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 1);
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0, 1.0, 1.0, 0.60);
+		ventanas.Draw(lightingShader);
+		glDisable(GL_BLEND);
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0, 1.0, 1.0, 1.0);
 		glBindVertexArray(0);
 
 

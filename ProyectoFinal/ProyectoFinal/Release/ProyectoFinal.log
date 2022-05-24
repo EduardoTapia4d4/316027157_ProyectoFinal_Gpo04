@@ -6,25 +6,25 @@ C:\Users\eduar\Documents\LABCompuGrafica\Repositorio\316027157_ProyectoFinal_Gpo
 C:\Users\eduar\Documents\LABCompuGrafica\Repositorio\316027157_ProyectoFinal_Gpo04\ProyectoFinal\ProyectoFinal\316027157_ProyectoFinal_GPO04.cpp(106,5091): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
 C:\Users\eduar\Documents\LABCompuGrafica\Repositorio\316027157_ProyectoFinal_Gpo04\ProyectoFinal\ProyectoFinal\316027157_ProyectoFinal_GPO04.cpp(108,4541): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
 C:\Users\eduar\Documents\LABCompuGrafica\Repositorio\316027157_ProyectoFinal_Gpo04\ProyectoFinal\ProyectoFinal\316027157_ProyectoFinal_GPO04.cpp(110,5155): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
-C:\Users\eduar\Documents\LABCompuGrafica\Repositorio\316027157_ProyectoFinal_Gpo04\ProyectoFinal\ProyectoFinal\316027157_ProyectoFinal_GPO04.cpp(294,24): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-C:\Users\eduar\Documents\LABCompuGrafica\Repositorio\316027157_ProyectoFinal_Gpo04\ProyectoFinal\ProyectoFinal\316027157_ProyectoFinal_GPO04.cpp(579,94): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\eduar\Documents\LABCompuGrafica\Repositorio\316027157_ProyectoFinal_Gpo04\ProyectoFinal\ProyectoFinal\316027157_ProyectoFinal_GPO04.cpp(754,19): warning C4305: '+=': truncamiento de 'double' a 'float'
-C:\Users\eduar\Documents\LABCompuGrafica\Repositorio\316027157_ProyectoFinal_Gpo04\ProyectoFinal\ProyectoFinal\316027157_ProyectoFinal_GPO04.cpp(848,22): warning C4305: '=': truncamiento de 'double' a 'float'
-C:\Users\eduar\Documents\LABCompuGrafica\Repositorio\316027157_ProyectoFinal_Gpo04\ProyectoFinal\ProyectoFinal\316027157_ProyectoFinal_GPO04.cpp(951,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-C:\Users\eduar\Documents\LABCompuGrafica\Repositorio\316027157_ProyectoFinal_Gpo04\ProyectoFinal\ProyectoFinal\316027157_ProyectoFinal_GPO04.cpp(952,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-C:\Users\eduar\Documents\LABCompuGrafica\Repositorio\316027157_ProyectoFinal_Gpo04\ProyectoFinal\ProyectoFinal\316027157_ProyectoFinal_GPO04.cpp(956,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-C:\Users\eduar\Documents\LABCompuGrafica\Repositorio\316027157_ProyectoFinal_Gpo04\ProyectoFinal\ProyectoFinal\316027157_ProyectoFinal_GPO04.cpp(957,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-C:\Users\eduar\Documents\LABCompuGrafica\Repositorio\316027157_ProyectoFinal_Gpo04\ProyectoFinal\ProyectoFinal\316027157_ProyectoFinal_GPO04.cpp(959,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-C:\Users\eduar\Documents\LABCompuGrafica\Repositorio\316027157_ProyectoFinal_Gpo04\ProyectoFinal\ProyectoFinal\316027157_ProyectoFinal_GPO04.cpp(960,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\eduar\Documents\LABCompuGrafica\Repositorio\316027157_ProyectoFinal_Gpo04\ProyectoFinal\ProyectoFinal\316027157_ProyectoFinal_GPO04.cpp(302,24): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\eduar\Documents\LABCompuGrafica\Repositorio\316027157_ProyectoFinal_Gpo04\ProyectoFinal\ProyectoFinal\316027157_ProyectoFinal_GPO04.cpp(633,94): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+C:\Users\eduar\Documents\LABCompuGrafica\Repositorio\316027157_ProyectoFinal_Gpo04\ProyectoFinal\ProyectoFinal\316027157_ProyectoFinal_GPO04.cpp(828,19): warning C4305: '+=': truncamiento de 'double' a 'float'
+C:\Users\eduar\Documents\LABCompuGrafica\Repositorio\316027157_ProyectoFinal_Gpo04\ProyectoFinal\ProyectoFinal\316027157_ProyectoFinal_GPO04.cpp(922,22): warning C4305: '=': truncamiento de 'double' a 'float'
+C:\Users\eduar\Documents\LABCompuGrafica\Repositorio\316027157_ProyectoFinal_Gpo04\ProyectoFinal\ProyectoFinal\316027157_ProyectoFinal_GPO04.cpp(1027,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\eduar\Documents\LABCompuGrafica\Repositorio\316027157_ProyectoFinal_Gpo04\ProyectoFinal\ProyectoFinal\316027157_ProyectoFinal_GPO04.cpp(1028,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\eduar\Documents\LABCompuGrafica\Repositorio\316027157_ProyectoFinal_Gpo04\ProyectoFinal\ProyectoFinal\316027157_ProyectoFinal_GPO04.cpp(1032,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\eduar\Documents\LABCompuGrafica\Repositorio\316027157_ProyectoFinal_Gpo04\ProyectoFinal\ProyectoFinal\316027157_ProyectoFinal_GPO04.cpp(1033,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\eduar\Documents\LABCompuGrafica\Repositorio\316027157_ProyectoFinal_Gpo04\ProyectoFinal\ProyectoFinal\316027157_ProyectoFinal_GPO04.cpp(1035,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\eduar\Documents\LABCompuGrafica\Repositorio\316027157_ProyectoFinal_Gpo04\ProyectoFinal\ProyectoFinal\316027157_ProyectoFinal_GPO04.cpp(1036,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
 soil2-debug.lib(SOIL2.obj) : warning LNK4075: se omite '/EDITANDCONTINUE' debido a la especificación '/OPT:ICF'
 LINK : warning LNK4098: la biblioteca predeterminada'MSVCRTD' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
   Generando código
-  6 of 623 functions ( 1.0%) were compiled, the rest were copied from previous compilation.
+  1 of 624 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    36 functions had inline decision re-evaluated but remain unchanged
+    0 functions had inline decision re-evaluated but remain unchanged
   Generación de código finalizada
 soil2-debug.lib(etc1_utils.obj) : warning LNK4099: no se encontró PDB 'soil2-debug.pdb' con 'soil2-debug.lib(etc1_utils.obj)' o en 'C:\Users\eduar\Documents\LABCompuGrafica\Repositorio\316027157_ProyectoFinal_Gpo04\ProyectoFinal\Release\soil2-debug.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
 soil2-debug.lib(image_DXT.obj) : warning LNK4099: no se encontró PDB 'soil2-debug.pdb' con 'soil2-debug.lib(image_DXT.obj)' o en 'C:\Users\eduar\Documents\LABCompuGrafica\Repositorio\316027157_ProyectoFinal_Gpo04\ProyectoFinal\Release\soil2-debug.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
 soil2-debug.lib(image_helper.obj) : warning LNK4099: no se encontró PDB 'soil2-debug.pdb' con 'soil2-debug.lib(image_helper.obj)' o en 'C:\Users\eduar\Documents\LABCompuGrafica\Repositorio\316027157_ProyectoFinal_Gpo04\ProyectoFinal\Release\soil2-debug.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-soil2-debug.lib(SOIL2.obj) : warning LNK4099: no se encontró PDB '' con 'soil2-debug.lib(SOIL2.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+soil2-debug.lib(SOIL2.obj) : warning LNK4099: no se encontró PDB 'soil2-debug.pdb' con 'soil2-debug.lib(SOIL2.obj)' o en 'C:\Users\eduar\Documents\LABCompuGrafica\Repositorio\316027157_ProyectoFinal_Gpo04\ProyectoFinal\Release\soil2-debug.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
   ProyectoFinal.vcxproj -> C:\Users\eduar\Documents\LABCompuGrafica\Repositorio\316027157_ProyectoFinal_Gpo04\ProyectoFinal\Release\ProyectoFinal.exe

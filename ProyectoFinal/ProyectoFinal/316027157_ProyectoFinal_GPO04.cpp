@@ -119,7 +119,8 @@ int i = 0, h = 0;			//Contadores para recorrer los arreglos
 
 // Positions of the point lights
 glm::vec3 pointLightPositions[] = {
-	glm::vec3(-5, 4.34f, 7.0f),						//Luz de habitacion principal
+	glm::vec3(-5, 4.31f, 7.0f),						//Luz de habitacion principal
+	glm::vec3(2, 4.31f, -6.0f)						//Luz de la cocina
 };
 
 float vertices[] = {								//Arreglo de vertices para formar cubos
@@ -168,7 +169,7 @@ float vertices[] = {								//Arreglo de vertices para formar cubos
 
 //Vectores para controlar la propiedad ambiental y difusa de las luces
 glm::vec3 Light1 = glm::vec3(0);
-//glm::vec3 Light2 = glm::vec3(0);
+glm::vec3 Light2 = glm::vec3(0);
 //glm::vec3 Light3 = glm::vec3(0);
 //glm::vec3 Light4 = glm::vec3(0);
 //glm::vec3 Light5 = glm::vec3(0);
@@ -259,8 +260,15 @@ int main()
 
 	//Segundo cuarto
 	Model MueblesC((char*)"Models/MueblesCocina/MueblesV1.obj");
+
 	Model LavaPlatos((char*)"Models/LavaPlatos/lavaPlatos.obj");
+
 	Model Estufa((char*)"Models/Estufa/estufa.obj");
+
+	Model Refri((char*)"Models/Refrigerador/refrigerador.obj");
+
+
+	Model Microondas((char*)"Models/Microondas/microondas.obj");
 
 
 
@@ -328,6 +336,15 @@ int main()
 		glUniform1f(glGetUniformLocation(lightingShader.Program, "pointLights[0].linear"), 0.22f);
 		glUniform1f(glGetUniformLocation(lightingShader.Program, "pointLights[0].quadratic"), 0.20f);
 
+		// Point light 2
+		glUniform3f(glGetUniformLocation(lightingShader.Program, "pointLights[1].position"), pointLightPositions[1].x, pointLightPositions[1].y, pointLightPositions[1].z);
+		glUniform3f(glGetUniformLocation(lightingShader.Program, "pointLights[1].ambient"), Light2.x, Light2.y, Light2.z);
+		glUniform3f(glGetUniformLocation(lightingShader.Program, "pointLights[1].diffuse"), Light2.x, Light2.y, Light2.z);
+		glUniform3f(glGetUniformLocation(lightingShader.Program, "pointLights[1].specular"), 0.0f, 0.0f, 0.0f);
+		glUniform1f(glGetUniformLocation(lightingShader.Program, "pointLights[1].constant"), 1.0f);
+		glUniform1f(glGetUniformLocation(lightingShader.Program, "pointLights[1].linear"), 0.22f);
+		glUniform1f(glGetUniformLocation(lightingShader.Program, "pointLights[1].quadratic"), 0.20f);
+
 
 		// Set material properties
 		glUniform1f(glGetUniformLocation(lightingShader.Program, "material.shininess"), 22.0f); //Brillo del objeto
@@ -382,8 +399,8 @@ int main()
 
 		//Lampara habitación
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(-5.0f, 4.34f, 7.0f));
-		model = glm::scale(model, glm::vec3(0.3f, 0.3f, 0.3f));
+		model = glm::translate(model, glm::vec3(-5.0f, 4.31f, 7.0f));
+		model = glm::scale(model, glm::vec3(0.34f, 0.34f, 0.34f));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
 		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0, 1.0, 1.0, 5.0);
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
@@ -568,6 +585,43 @@ int main()
 		Estufa.Draw(lightingShader);
 		glBindVertexArray(0);
 
+		//Refrigerador	
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(2.708f, 1.34f, -8.112f));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0, 1.0, 1.0, 5.0);
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		Refri.Draw(lightingShader);
+		glBindVertexArray(0);
+
+		//Microondas	
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(2.708f, 1.34f, -8.112f));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0, 1.0, 1.0, 5.0);
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		Microondas.Draw(lightingShader);
+		glBindVertexArray(0);
+
+		//Cortinas 3
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(3.294f, 2.829f, -8.243f));
+		model = glm::scale(model, glm::vec3(0.989f, 0.621f, 1.058f));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0, 1.0, 1.0, 5.0);
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		cortinas.Draw(lightingShader);
+		glBindVertexArray(0);
+
+		//Lampara cocina
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(2.0f, 4.31f, -6.0f));
+		model = glm::scale(model, glm::vec3(0.34f, 0.34f, 0.34f));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTransparencia"), 0);
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0, 1.0, 1.0, 5.0);
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		lamp.Draw(lightingShader);
+		glBindVertexArray(0);
 
 
 		//Ventanas con transparencia
@@ -585,6 +639,8 @@ int main()
 
 		//For the light bulb in the lamp object
 		//Shader de uso exclusivo para iluminación
+
+		//Habitacion principal
 		lampShader.Use();
 
 		// Get location objects for the matrices on the lamp shader
@@ -597,6 +653,24 @@ int main()
 		model = glm::mat4(1);		
 		model = glm::translate(model, lightPos);
 		model = glm::translate(model, pointLightPositions[0]);				//Habitación
+		model = glm::scale(model, glm::vec3(0.3f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		FocoL.Draw(lampShader);
+		glBindVertexArray(0);
+
+		//Cocina
+		lampShader.Use();
+
+		// Get location objects for the matrices on the lamp shader
+		modelLoc = glGetUniformLocation(lampShader.Program, "model");
+		viewLoc = glGetUniformLocation(lampShader.Program, "view");
+		projLoc = glGetUniformLocation(lampShader.Program, "projection");
+
+		glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
+		glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projection));
+		model = glm::mat4(1);
+		model = glm::translate(model, lightPos);
+		model = glm::translate(model, pointLightPositions[1]);				//Habitación
 		model = glm::scale(model, glm::vec3(0.3f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		FocoL.Draw(lampShader);
@@ -935,10 +1009,12 @@ void KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mode
 		if (active)
 		{
 			Light1 = glm::vec3(0.5f, 0.5f, 0.4f);
+			Light2 = glm::vec3(0.5f, 0.5f, 0.4f);
 		}
 		else
 		{
 			Light1 = glm::vec3(0);
+			Light2 = glm::vec3(0);
 		}
 	}
 
